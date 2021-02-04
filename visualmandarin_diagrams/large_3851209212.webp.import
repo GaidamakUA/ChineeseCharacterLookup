@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/large_3851209212.webp-6c8b0496be1ba999c9ff04e7ce49e621.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://visualmandarin_diagrams/large_3851209212.webp"
+dest_files=[ "res://.import/large_3851209212.webp-6c8b0496be1ba999c9ff04e7ce49e621.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

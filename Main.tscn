@@ -1,0 +1,125 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://wts11.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://visualmandarin_diagrams/large_1000042618.webp" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Show"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1024, 0 ), Vector2( 474, 0 ) ]
+}
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 20.0
+text = "Lookup character"
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+theme = SubResource( 2 )
+text = "善讼的人的故事
+赖和
+
+　　「先生！可怜咧，求你向志舍讲一声，实在是真穷苦，这是先生所素知的；一
+具薄板仔，亲戚间已经是艰苦负担，散人〔散赤人，穷苦人〕本无富户的亲戚，志
+舍这样家私，少收五钱银是不关轻重，求你做好心，替我讲一声。」
+　　「你我只隔一竹围，你的事情我那有不知，不过头家有些皮气，我是他所用的
+人，还是你去托一个相当的人来讲，五钱银他几嘴阿片就烧去了，应当是会允许。」
+
+　　「林先生，除起你，还有什么人可拜托？草地人到这所在，不是有你在此，跨
+过户碇〔门槛〕都不敢，和他相当的人，要去拜托谁？总是求你做好心咧！」
+　　「头家现在又正在『午眠』，我又不能主意，你下晡再来，我替你讲一声看？」
+
+　　「人是大昨日就死去了，不能再放置下去，总求先生给管山的讲一声，让我们
+先去安葬，志舍醒来时若说不肯，总算让我欠些时，我当『拍拚』〔拚命〕来清还；
+虽赚不到，儿子也须卖来还他，定不连累到先生。」
+　　「啊！」林先生叹一下气，说：「无法度！好，我写张字你提去给管山的看，
+等候头家醒来，我替你讲看，不过这是不一定，钱---你也着去设法。」
+　　林先生是被雇在志舍家里，替他掌管账目，和办理一切事务；听说是番社庄人，
+是不是生番的后裔，现在没人晓得，但是他的性质却很率直果敢；当他遣走了来央
+求他的邻人之后，心里甚是不安，总在门前厝内，行来走去。
+　　他想起头家对他所讲的话来：「在有钱人的面前，因为想得到些怜悯赏赐，人
+是什么都敢装做的。」他觉得这次的主意，在这款主人之下有一点不妥，同时又对
+主人唯利是视的行为生起反感。---「现今是钱的天下，有钱也就有名誉幸福，但是
+也须有无钱的人，才见得钱的威风；无钱的人，是要使有钱的享福快乐，才有他们
+生存的使命，神是为着有钱的人，才创造他们的。」想到主人这样自鸣得意的态度，
+又钩起林先生不少的憎恶。
+　　觉他得在这样主人之下服务，是真无趣，因为他自己也是无钱的人。但是再一
+反想，为着生又不能就舍弃头路，这样想来想去，林先生也自己惘惘然不知要怎样
+了。"
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 550.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer"]
+margin_right = 550.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 244.0
+margin_right = 550.0
+margin_bottom = 258.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "adfsdfg"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Show = SubResource( 4 )
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="gui_input" from="Panel" to="." method="_on_Panel_gui_input"]
